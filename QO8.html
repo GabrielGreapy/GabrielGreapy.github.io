@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QO8</title>
+</head>
+<body>
+    <div class="pergunta">
+        <input type="text" id="numero">
+        <button onclick="verificar()">Verificar</button>
+    </div>
+    <div class="resposta" id="resposta">
+
+    </div>
+
+    <script>
+        function verificar(){
+            numero = document.getElementById("numero").value
+            if(numero % 2 == 0){
+                document.getElementById("resposta").innerHtml = `
+                    <h2> O número ${numero} é par </h2>
+                `
+            } else {
+                document.getElementById("resposta").innerHtml = `
+                    <h2> O número ${numero} é ímpar </h2>
+                `
+            }
+        }
+    </script>
+</body>
+</html>

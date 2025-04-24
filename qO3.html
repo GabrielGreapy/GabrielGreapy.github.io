@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QO3</title>
+</head>
+<body>
+    <div class="pergunta">
+        <input id="nome" type="text">
+        <input type="text" id="idade">
+        <button onclick="">Enviar</button>
+        <div id="mensagem">
+
+        </div>
+    </div>
+    <script>
+        function enviarDados(){
+            document.getElementById("pergunta").remove()
+            document.getElementById("mensagem").innerHtml = `
+                <h2> Seja bem-vindo ${nome} ( ${idade} anos)</h2>
+            `
+        };
+    </script>
+</body>
+</html>

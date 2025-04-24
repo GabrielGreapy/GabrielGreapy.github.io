@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QO4</title>
+</head>
+<body>
+    <div class="pergunta">
+        <input type="number" id="numero1">
+        <input type="number" id="numero2">
+        <input type="text" id="op" onclick="operacao">
+    </div>
+    <div class="resposta">
+
+    </div>
+    <script>
+        function operacao(){
+            numero1 = document.getElementById("numero1")
+            numero2 = document.getElementById("numero2")
+            op = document.getElementById("op")
+            if(op = "+"){
+                
+                document.getElementById("resposta").innerHtml = `
+                <h2> ${numero1 + numero2}</h2>
+                `
+            }
+            if(op = "-"){
+                
+                document.getElementById("resposta").innerHtml = `
+                <h2> ${numero1 - numero2}</h2>
+                `
+            }
+            if(op = "*"){
+                
+                document.getElementById("resposta").innerHtml = `
+                <h2> ${numero1 * numero2}
+                `
+            }
+            if(op = "/"){
+                if(numero1 < 0, numero2 < 0){
+                    document.getElementById("resposta").innerHtml = `
+                    <h2> Os numeros não podem ser negativos ou 0 </h2>
+                    `    
+                }
+                    document.getElementById("resposta").innerHtml = `
+                    <h2> ${numero1 / numero2}</h2>
+                    `
+            }
+            default{
+                document.getElementById("resposta").innerHtml = `
+                    <h2> Insira valores corretos</h2>
+                    `
+            }
+
+        }
+    </script>
+</body>
+</html>

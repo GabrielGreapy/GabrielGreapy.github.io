@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QO7</title>
+</head>
+<body>
+    <div class="pergunta">
+        <input type="text" id="salario">
+        <input type="text" id="meses">
+        <button onclick="calcular()">Calcular</button>
+    </div>
+    <div class="resposta" id="resposta">
+
+    </div>
+
+    <script>
+        function calcular(){
+            salario = document.getElementById("salario").value
+            meses = document.getElementById("meses").value
+            total = salario * meses
+
+            document.getElementById("resposta").innerHtml = `
+                <h2> Seu salário anual é ${total}</h2>
+            `
+        }
+    </script>
+</body>
+</html>
