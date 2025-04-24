@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntas</title>
+</head>
+<body>
+    <p id="mensagem"></p>
+    <select id="selecao" onchange="alterarMensagem()">
+    <option value="1">Opção 1</option>
+    <option value="2">Opção 2</option>
+    <option value="3">Opção 3</option>
+    </select>
+
+    <script>
+        function alterarMensagem() {
+        let selecao = document.getElementById("selecao");
+        let mensagem = document.getElementById("mensagem");
+        
+        if (selecao.value === "1") {
+            mensagem.innerHTML = "Você selecionou a Opção 1.";
+        } else if (selecao.value === "2") {
+            mensagem.innerHTML = "Você selecionou a Opção 2.";
+        } else if (selecao.value === "3") {
+            mensagem.innerHTML = "Você selecionou a Opção 3.";
+        }
+        }
+    </script>
+</body>
+</html>

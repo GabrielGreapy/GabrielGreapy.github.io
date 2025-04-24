@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <select id="selecao" onchange="escreverElemento()">
+        <option value="1">Opção 1</option>
+        <option value="2">Opção 2</option>
+        <option value="3">Opção 3</option>
+    </select>
+    <script>
+        function escreverElemento() {
+            let selecao = document.getElementById("selecao");
+        
+            switch (selecao.value) {
+            case "1":
+                document.write("Você selecionou a Opção 1.");
+                break;
+            case "2":
+                document.write("Você selecionou a Opção 2.");
+                break;
+            case "3":
+                document.write("Você selecionou a Opção 3.");
+                break;
+            default:
+                document.write("Opção inválida.");
+            }
+        }
+    </script>
+</body>
+</html>

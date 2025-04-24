@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div id="container"></div>
+    <select id="selecao" onchange="adicionarElemento()">
+    <option value="1">Opção 1</option>
+    <option value="2">Opção 2</option>
+    <option value="3">Opção 3</option>
+    </select>
+
+
+    <script>
+        function adicionarElemento() {
+    let container = document.getElementById("container");
+    let selecao = document.getElementById("selecao");
+
+    // Limpa o conteúdo anterior
+    container.innerHTML = "";
+
+    if (selecao.value === "1") {
+        let paragrafo = document.createElement("p");
+        paragrafo.textContent = "Você selecionou a Opção 1.";
+        container.appendChild(paragrafo);
+    } else if (selecao.value === "2") {
+        let paragrafo = document.createElement("p");
+        paragrafo.textContent = "Você selecionou a Opção 2.";
+        container.appendChild(paragrafo);
+    } else if (selecao.value === "3") {
+        let paragrafo = document.createElement("p");
+        paragrafo.textContent = "Você selecionou a Opção 3.";
+        container.appendChild(paragrafo);
+    }
+    }
+    </script>
+</body>
+</html>
