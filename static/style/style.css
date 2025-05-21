@@ -37,6 +37,7 @@ small {font-size: 0.750rem; /* 12px */}
     --prim: #231caa;
     --sec: #deda89;
     --terc: #6cd670;
+    --alt-bg: #040410;
 }
 [data-theme="dark"]{
     --bg-color: #040410;
@@ -44,6 +45,7 @@ small {font-size: 0.750rem; /* 12px */}
     --prim: #5b54e3;
     --sec: #41415c;
     --terc: #f9931b;
+    --alt-bg: #f8f7fd;
 }
 nav{
     height: 30px;
@@ -59,16 +61,24 @@ nav ul{
     align-items: center
 }
 
+nav img{
+    height: 25px;
+    padding-top: 2px;
+    opacity: 1;
+
+}
 nav li{
 
 }
+    
+
     .side-bar{
         position: fixed;
         background-color: var(--terc);
         top: 0;
-        left: -300px;
+        left: -200px;
         height: 100vh;
-        width: 300px;
+        width: 200px;
         z-index: 999;
         background-color: var(--terc);
         transition: left 0.5s ease-out;
@@ -88,7 +98,7 @@ nav li{
         margin-left: auto;
 
     }
-
+    
     .coluna{
         display:flex;
         flex-flow:column;
