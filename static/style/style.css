@@ -7,7 +7,8 @@ body {
     font-family: 'Noto Sans Pau Cin Hau';
     font-weight: 400;
     scroll-behavior: smooth;
-    background-color: var(--background)
+    color: var(--text);
+    background-color: var(--bg-color)
 }
 
 h1, h2, h3, h4, h5 {
@@ -32,14 +33,33 @@ small {font-size: 0.750rem; /* 12px */}
 :root{
     --rgba: rgba(0,0,0,0.2);
     --text: #04040f;
-    --light: #f8f7fd;
-    --dark: #040410;
-    --primL: #231caa;
-    --secL: #deda89;
-    --tercL: #6cd670;
-    --primD: #5b54e3;
-    --secD: #41415c;
-    --tercD: #f9931b;
+    --bg-color: #f8f7fd;
+    --prim: #231caa;
+    --sec: #deda89;
+    --terc: #6cd670;
+}
+[data-theme="dark"]{
+    --bg-color: #040410;
+    --text: #f8f7fd;
+    --prim: #5b54e3;
+    --sec: #41415c;
+    --terc: #f9931b;
+}
+nav{
+    height: 30px;
+    width: 100%;
+    background-color: var(--prim);
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    padding: 0 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center
+}
+
+nav li{
 
 }
     .side-bar{
@@ -50,7 +70,7 @@ small {font-size: 0.750rem; /* 12px */}
         height: 100vh;
         width: 300px;
         z-index: 999;
-        background-color: var(--tercD);
+        background-color: var(--terc);
         transition: left 0.5s ease-out;
         box-shadow:  -4px 0 20px var(--rgba);
     }
@@ -86,11 +106,3 @@ small {font-size: 0.750rem; /* 12px */}
 
 /* keyframes */
 
-@keyframes side-bar {
-    from {
-      transform: translate(-50%, -60%);
-    }
-    to {
-      transform: translate(-50%, -50%);
-    }
-}
