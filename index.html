@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel Martins</title>
     <link rel="stylesheet" href="/static/style/style.css">
+    <script src="/static/js/script.js"></script>
 </head>
 <body>
     <nav>
+        <button onclick="SideBarOn()" id="menu">Menu</button>
+    </nav>
+    <div class="side-bar">
         <ul>
+            <li>
+                <p onclick="sideBarOff" id="close-btn">X</p>
+            </li>
             <li>
                 <p>Home</p>
             </li>
@@ -22,6 +29,7 @@
                 <p>Contatos</p>
             </li>
         </ul>
-    </nav>
+    </div>
+    
 </body>
 </html>

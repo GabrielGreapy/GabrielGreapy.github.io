@@ -6,6 +6,8 @@ body {
     box-sizing: content-box;
     font-family: 'Noto Sans Pau Cin Hau';
     font-weight: 400;
+    scroll-behavior: smooth;
+    background-color: var(--background)
 }
 
 h1, h2, h3, h4, h5 {
@@ -27,10 +29,45 @@ h5 {font-size: 1.333rem; /* 21.28px */}
 
 small {font-size: 0.750rem; /* 12px */}
 
-nav{
-    
-}
+:root{
+    --rgba: rgba(0,0,0,0.2);
+    --text: #04040f;
+    --light: #f8f7fd;
+    --dark: #040410;
+    --primL: #231caa;
+    --secL: #deda89;
+    --tercL: #6cd670;
+    --primD: #5b54e3;
+    --secD: #41415c;
+    --tercD: #f9931b;
 
+}
+    .side-bar{
+        position: fixed;
+        background-color: var(--terc);
+        top: 0;
+        left: -300px;
+        height: 100vh;
+        width: 300px;
+        z-index: 999;
+        background-color: var(--tercD);
+        transition: left 0.5s ease-out;
+        box-shadow:  -4px 0 20px var(--rgba);
+    }
+    .side-bar.active{
+        left: 0;
+    }
+
+
+    .side-bar ul{
+        list-style: none;
+    }
+
+
+    .side-bar li:first-child {
+        margin-left: auto;
+
+    }
 
     .coluna{
         display:flex;
@@ -41,3 +78,19 @@ nav{
         display:flex;
         justify-content: center;
     }
+
+
+
+
+
+
+/* keyframes */
+
+@keyframes side-bar {
+    from {
+      transform: translate(-50%, -60%);
+    }
+    to {
+      transform: translate(-50%, -50%);
+    }
+}
