@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Noto%20Sans%20Pau%20Cin%20Hau:700|Noto%20Sans%20Pau%20Cin%20Hau:400');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Michroma&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Michroma&family=Share+Tech&display=swap');
 body {
     padding: 0;
     margin: 0;
@@ -35,10 +35,18 @@ small {font-size: 0.750rem; /* 12px */}
 
 footer{
     display: flex;
-    height: 30vh;
+    height: 40vh;
     width: 100%;
     background-color: var(--border-color);
+    flex-wrap: wrap;
 }
+    .footer-div{
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+    }
     .redes-sociais{
         min-width: 320px;
         display: flex;
@@ -56,12 +64,14 @@ footer{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         gap: 1px;
     }
     .navegacao span{
         font-size: 20px;
         font-weight: bolder;
     }
+
 :root{
     --rgba: rgba(0,0,0,0.2);
     --text: #04040f;
@@ -174,6 +184,13 @@ nav img{
     font-style: normal;
     color: var(--text);
     }
+    .tech{
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 50px;
+    }
+
     .esquerda{
         padding-left: 1.6rem ;
         text-align: left;
@@ -187,7 +204,15 @@ nav img{
         background-color: var(--terc);
     }
     .three-items{
+        margin-top: 1.6rem;
+        display: flex;
+        gap: 1.6rem;
+        flex-wrap: wrap;
         justify-content: space-evenly;
+        
+        
+        
+        
     }
     .c-bloco{
         display: flex;
@@ -203,10 +228,7 @@ nav img{
     .bloco h5{
         padding-left: 3rem;
     }
-    .bloco h5::after{
-        content:' Para você';
-        color: var(--bg-color);
-    }
+    
     .bloco2{
         height: 130px;
         max-width: 1400px;
@@ -219,17 +241,22 @@ nav img{
         justify-content: space-between;
     }
     .three-items-div{
-        margin-top: 1.6rem;
-        max-height: 98px;
-        max-width: 98px;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: auto;
+        min-height: 150px;
+        max-width: 150px;
         color: var(--bg-color);
         border: solid 4px var(--border-color);
         justify-content: center;
         border-radius: 10px;
         background-color: var(--text);
+        padding: 3px;
+
+        
     }
     .three-items-div p{
-        font-size: 9px;
+        font-size: 12px;
     }
     .chamada{
         display: flex;
@@ -240,6 +267,53 @@ nav img{
         background: linear-gradient(to right, var(--bg-color), var(--prim));
         color: var(--text);
         padding-left: 2rem;
+    }
+    .projetos{
+        display: flex;
+        padding: 1rem;
+        flex-direction: column;
+    }
+    .projeto{
+        display: grid;
+        grid-template-columns: 10% 45% 45%;
+        grid-template-rows:100% 1;
+
+    }
+    .p-titulo-div{
+
+        border-top: 2px solid var(--border-color);        
+        border-bottom: 2px solid var(--border-color);   
+    }
+    .num-projeto{
+        padding-left: 1.3rem;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+    }
+    .titulo-projeto{
+        border-right: 3px var(--border-color);
+        display: flex;
+        font-size: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+    .titulo-projeto a{
+        
+        text-decoration: none;
+    }
+    .video{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        width: 100%;
+
+    }
+    .video-projeto{
+        background-color: var(--alt-bg);
+        min-height: 250px;
+        width: 75vw;
     }
     .icon-sol{
         background-color: var(--text);
