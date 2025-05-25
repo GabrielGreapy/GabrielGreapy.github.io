@@ -628,7 +628,19 @@ nav img{
     font-weight: 400;
     font-style: normal;
     }
+    .escuro{
+        display: none;
+    }
 
+    .claro{
+        display: block;
+    }
+    [data-theme='dark'] .claro{
+        display: none;
+    }
+    [data-theme='dark'] .escuro{
+        display: block;
+    }
 
     .Heavy{
     font-family: "Bebas Neue", sans-serif;
@@ -828,10 +840,19 @@ nav img{
         font-size: 1.5rem;
         text-align: left;
     }
-
-    .popup-x{
-        
+    .mostre{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding: 3rem 0 3rem 0;
     }
+    .mostre img{
+        height: 400px;
+        border-radius: 20px;
+
+    }
+
     .icon-sol{
         background-color: var(--text);
         -webkit-mask: url('/static/imgs/sun.svg') no-repeat center;
