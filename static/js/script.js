@@ -15,3 +15,9 @@ function alternarTema(){
         html.setAttribute("data-theme", "dark")
     }
 }
+function abrirPopUp(){    
+    document.getElementById("popup").style.display = "flex";
+}
+function fecharPopUp(){
+    document.getElementById("popup").style.display = "none";
+}
