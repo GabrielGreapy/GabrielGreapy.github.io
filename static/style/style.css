@@ -5,7 +5,7 @@
 body {
     padding: 0;
     margin: 0;
-    box-sizing: content-box;
+    box-sizing: border-box;
     font-family: 'Noto Sans Pau Cin Hau';
     font-weight: 400;
     scroll-behavior: smooth;
@@ -304,19 +304,7 @@ nav img{
         
         text-decoration: none;
     }
-    .video{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 1.6rem 0 1.6rem 0;
-        width: 100%;
-
-    }
-    .video-projeto{
-        background-color: var(--alt-bg);
-        min-height: 250px;
-        width: 75vw;
-    }
+    .
     .container-entre-em-contato{
         padding: 1rem;
         display: flex;
@@ -767,19 +755,8 @@ nav img{
         
         text-decoration: none;
     }
-    .video{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 1.6rem 0 1.6rem 0;
-        width: 100%;
 
-    }
-    .video-projeto{
-        background-color: var(--alt-bg);
-        min-height: 250px;
-        width: 75vw;
-    }
+
     .container-entre-em-contato{
         padding: 1rem;
         display: flex;
@@ -916,7 +893,33 @@ nav img{
         width: 40px;
         height: 40px;
     }
-
+    .container-slider{
+        display: flex;
+        min-height: 100vh;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .container-images{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 700px;
+    }
+    .slider{
+        position: absolute;
+        width: 100%;
+        
+    }
+    #prev-button, #next-button{
+        width: 30px;
+        height: 30px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
 
 
 
