@@ -920,8 +920,7 @@ nav img{
         width: 30px;
         height: 30px;
         border: none;
-        background-color: var(--terc);
-        border-radius: 50%;
+        background-color: transparent;
         cursor: pointer;
 
     }
@@ -929,7 +928,18 @@ nav img{
         width: 100%;
         height: 80%;
     }
+    #prev-button-escuro, #next-button-escuro{
+        width: 30px;
+        height: 30px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
 
+    }
+    #prev-button-escuro img, #next-button-escuro img{
+        width: 100%;
+        height: 80%;
+    }
 
 
 /* keyframes */

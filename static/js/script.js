@@ -22,6 +22,8 @@ function fecharPopUp(){
     document.getElementById("popup").style.display = "none";
 }
 const slider = document.querySelectorAll('.slider');
+const btnNextEscuro = document.getElementById("next-button-escuro");
+const btnPrevEscuro = document.getElementById("prev-button-escuro");
 const btnPrev = document.getElementById("prev-button");
 const btnNext = document.getElementById("next-button");
 
@@ -48,4 +50,6 @@ function prevSlider(){
 }
 
 btnNext.addEventListener("click", nextSlider);
+btnNextEscuro.addEventListener("click", nextSlider);
 btnPrev.addEventListener("click", prevSlider);
+btnPrevEscuro.addEventListener("click", prevSlider);
