@@ -49,25 +49,7 @@ function criarDiv(valor){
   novaDiv.appendChild(texto)
   return novaDiv
 }
-// atv2
 
-
-const mostrar2 = document.getElementById("mostrar2")
-mostrar2.innerHTML = ""
-let n = [1,2,3,4,5,6];
-const nmostrar = n
-let numMaioresQ2 =
-    n.filter(function(numero){
-        return n > 2;
-    });
-function(){
-    const mostrar2 = document.getElementById("mostrar2")
-    
-    mostrar2.innerText = ""
-
-
-    
-}
 
 
 

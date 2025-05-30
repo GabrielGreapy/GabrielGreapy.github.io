@@ -482,6 +482,10 @@ footer{
         flex-shrink: 1;
         flex-basis: auto;
     }
+    .footer-div a{
+        text-decoration: none;
+        color: var(--prim);
+    }
     .redes-sociais{
         min-width: 320px;
         display: flex;
