@@ -60,3 +60,14 @@ function executarSomarTudo(){
     meuArray.push(soma)
     exibirValores()
 }
+function adicionar1Cada(){
+    const adicionado = []
+    for( let i in meuArray){
+        adicionado.push(meuArray[i] + 1)
+    }
+    meuArray.length = 0
+    for(let i in adicionado){
+        meuArray.push(adicionado[i])
+    }
+    exibirValores()
+}
