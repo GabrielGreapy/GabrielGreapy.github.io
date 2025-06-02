@@ -71,3 +71,22 @@ function adicionar1Cada(){
     }
     exibirValores()
 }
+function criarElemento(){
+    const elemento = []
+    for(let i in meuArray){
+        elemento.push({ numero : meuArray[i] })
+    }
+    meuArray.length = 0
+    for(let i in elemento){
+        meuArray.push(elemento[i])
+    }
+    exibirValores()
+}
+function logarPares(){
+    const log= []
+    for(let i in meuArray){
+        if(meuArray[i] % 2 === 0)
+            log.push(meuArray[i])
+    }
+    console.log(log)
+}
