@@ -85,7 +85,7 @@ footer{
     --border-color: #55555511;
 }
 [data-theme="dark"]{
-    --bg-color: #040410;
+    --bg-color:rgb(22, 22, 90);
     --bg-color-2: #0d0c1a;
     --text: #f8f7fd;
     --prim: #5b54e3;
