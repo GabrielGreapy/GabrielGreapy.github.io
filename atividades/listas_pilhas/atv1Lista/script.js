@@ -55,8 +55,6 @@ function executarFront() {
     alert(itens.front());
 }
 
-window.executarEnqueue = executarEnqueue;
-window.executarDequeue = executarDequeue;
-window.executarFront = executarFront;
+
 
 exibirArray();
