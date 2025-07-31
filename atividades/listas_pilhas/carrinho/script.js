@@ -21,14 +21,26 @@ function addToCart(gameName, imageSrc) {
         return;
     }
 
-    carrinho.push({ name: gameName, image: imageSrc });
+    const item = { name: gameName, image: imageSrc };
+    carrinho.push(item);
 
     const li = document.createElement("li");
+    li.setAttribute("data-name", gameName);
     li.innerHTML = `
         <strong>${gameName}</strong><br>
         <img src="${imageSrc}" alt="${gameName}">
+        <br>
+        <button onclick="removeFromCart('${gameName}')">🗑 Remover</button>
     `;
-    cartItems.prepend(li); // adiciona no topo
+    cartItems.prepend(li);
+}
+
+function removeFromCart(gameName) {
+    carrinho = carrinho.filter(item => item.name !== gameName);
+    const itemElement = cartItems.querySelector(`li[data-name="${gameName}"]`);
+    if (itemElement) {
+        cartItems.removeChild(itemElement);
+    }
 }
 
 buyButton.addEventListener("click", () => {
