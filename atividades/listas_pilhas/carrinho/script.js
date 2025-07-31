@@ -53,3 +53,18 @@ buyButton.addEventListener("click", () => {
     carrinho = [];
     cartItems.innerHTML = "";
 });
+
+
+
+
+document.getElementById("enviarJogoLista").addEventListener("Click", addNewGame )
+function addNewGame (e){
+    e.preventDefault();
+    const random = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWQO_j4l2Nj9OpnQ4sbrLCkIF05Yfw8nOinA&s";
+    const nomeDoJogo = document.getElementById("nomeJogo").value;
+    const item = {
+        name : nomeDoJogo,
+        image : random
+    }
+    carrinho.push(item);
+}
