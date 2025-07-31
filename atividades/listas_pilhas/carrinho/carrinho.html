@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabroja de Gajogos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bem vindo a menor loja de jogos</h1>
+        <button id="toggleCart">Carrinho de compras</button>
+    </header>
+
+    <aside id="cartSidebar" class="closed">
+        <button id="closeCart">❌</button>
+        <h2>Seu Carrinho</h2>
+        <ul id="cartItems"></ul>
+        <button id="buyButton">🛒 Comprar</button>
+    </aside>
+
+    <main>
+        <section class="games">
+            <div class="game-card">
+                <h3>Red Dead Redemption 2</h3>
+                <div class="image-placeholder"><img src="imgs/rdr2.jpeg" alt="RDR2"></div>
+                <button onclick="addToCart('RDR2', 'imgs/rdr2.jpeg')">Adicionar</button>
+            </div>
+            <div class="game-card">
+                <h3>GTA VI</h3>
+                <div class="image-placeholder"><img src="imgs/gtavi.jpeg" alt="GTA VI"></div>
+                <button onclick="addToCart('GTA VI', 'imgs/gtavi.jpeg')">Adicionar</button>
+            </div>
+            <div class="game-card">
+                <h3>Resident Evil 4</h3>
+                <div class="image-placeholder"><img src="imgs/re4.jpeg" alt="RE4"></div>
+                <button onclick="addToCart('RE4', 'imgs/re4.jpeg')">Adicionar</button>
+            </div>
+            <div class="game-card">
+                <h3>Bully</h3>
+                <div class="image-placeholder"><img src="imgs/bully.avif" alt="Bully"></div>
+                <button onclick="addToCart('Bully', 'imgs/bully.avif')">Adicionar</button>
+            </div>
+            <div class="game-card">
+                <h3>Castlevania</h3>
+                <div class="image-placeholder"><img src="imgs/castlev.webp" alt="Castlevania"></div>
+                <button onclick="addToCart('Castlevania', 'imgs/castlev.webp')">Adicionar</button>
+            </div>
+            <div class="game-card">
+                <h3>Animal Crossing</h3>
+                <div class="image-placeholder"><img src="imgs/animal-crossing.webp" alt="Animal Crossing"></div>
+                <button onclick="addToCart('Animal Crossing', 'imgs/animal-crossing.webp')">Adicionar</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
