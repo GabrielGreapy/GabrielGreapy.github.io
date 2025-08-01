@@ -159,3 +159,23 @@ document.getElementById("formularioNovoJogo").addEventListener("submit", functio
   document.getElementById("nomeJogo").value = "";
   document.getElementById("imagemJogo").value = "";
 });
+const playBtn = document.getElementById("playBtn");
+
+// Função para reproduzir as alterações salvas no histórico
+playBtn.addEventListener("click", () => {
+  if (undoStack.length === 0) return;
+
+  editor.disabled = true;
+  let index = 0;
+
+  const interval = setInterval(() => {
+    if (index >= undoStack.length) {
+      clearInterval(interval);
+      editor.disabled = false;
+      return;
+    }
+
+    editor.value = undoStack[index];
+    index++;
+  }, 500); 
+});

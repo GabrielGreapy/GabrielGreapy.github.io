@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Histórico com Pilha</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center py-10">
+  <h1 class="text-3xl font-bold mb-6">📝 Histórico de Edição (com Pilha)</h1>
+
+  <textarea id="editor" class="w-3/4 h-40 p-4 bg-gray-800 rounded-lg border border-gray-700 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none" placeholder="Digite aqui..."></textarea>
+
+  <div class="flex gap-4 mb-6">
+    <button id="undoBtn" class="bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-600 transition">↩️ Desfazer</button>
+    <button id="redoBtn" class="bg-green-500 px-4 py-2 rounded hover:bg-green-600 transition">↪️ Refazer</button>
+    <button id="clearBtn" class="bg-red-500 px-4 py-2 rounded hover:bg-red-600 transition">🧹 Limpar Histórico</button>
+    <button id="playBtn" class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 transition">▶️ Reproduzir Histórico</button>
+
+  </div>
+
+  <div class="w-3/4">
+    <h2 class="text-xl font-semibold mb-2">📜 Histórico:</h2>
+    <ul id="historyList" class="bg-gray-800 p-4 rounded-lg border border-gray-700 max-h-60 overflow-y-auto space-y-2 text-sm">
+      <li class="text-gray-400 italic">Nenhuma ação registrada ainda.</li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
