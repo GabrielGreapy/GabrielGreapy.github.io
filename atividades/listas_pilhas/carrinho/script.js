@@ -1,70 +1,161 @@
-let carrinho = [];
+class Node {
+  constructor(dado) {
+    this.dado = dado;
+    this.proximo = null;
+  }
+}
 
-const toggleCartBtn = document.getElementById("toggleCart");
-const closeCartBtn = document.getElementById("closeCart");
-const cartSidebar = document.getElementById("cartSidebar");
-const cartItems = document.getElementById("cartItems");
-const buyButton = document.getElementById("buyButton");
+class ListaLigada {
+  constructor() {
+    this.inicio = null;
+    this._tamanho = 0;
+  }
 
-toggleCartBtn.addEventListener("click", () => {
-    cartSidebar.classList.add("open");
-});
-
-closeCartBtn.addEventListener("click", () => {
-    cartSidebar.classList.remove("open");
-});
-
-function addToCart(gameName, imageSrc) {
-    const alreadyInCart = carrinho.some(item => item.name === gameName);
-    if (alreadyInCart) {
-        alert("Este jogo já está no carrinho...");
-        return;
+  adicionar(dado) {
+    const novoNode = new Node(dado);
+    if (!this.inicio) {
+      this.inicio = novoNode;
+    } else {
+      let temp = this.inicio;
+      while (temp.proximo) {
+        temp = temp.proximo;
+      }
+      temp.proximo = novoNode;
     }
+    this._tamanho++;
+  }
 
-    const item = { name: gameName, image: imageSrc };
-    carrinho.push(item);
+  removerPorNome(nome) {
+    let temp = this.inicio;
+    let anterior = null;
 
+    while (temp) {
+      if (temp.dado.nome === nome) {
+        if (!anterior) {
+          this.inicio = temp.proximo;
+        } else {
+          anterior.proximo = temp.proximo;
+        }
+        this._tamanho--;
+        return true;
+      }
+      anterior = temp;
+      temp = temp.proximo;
+    }
+    return false;
+  }
+
+  paraArray() {
+    const resultado = [];
+    let temp = this.inicio;
+    while (temp) {
+      resultado.push(temp.dado);
+      temp = temp.proximo;
+    }
+    return resultado;
+  }
+
+  contem(nome) {
+    let temp = this.inicio;
+    while (temp) {
+      if (temp.dado.nome === nome) return true;
+      temp = temp.proximo;
+    }
+    return false;
+  }
+
+  limpar() {
+    this.inicio = null;
+    this._tamanho = 0;
+  }
+
+  tamanho() {
+    return this._tamanho;
+  }
+}
+
+// ===================================
+// Carrinho
+// ===================================
+const carrinho = new ListaLigada();
+
+const botaoAbrirCarrinho = document.getElementById("toggleCart");
+const botaoFecharCarrinho = document.getElementById("closeCart");
+const barraCarrinho = document.getElementById("cartSidebar");
+const listaCarrinho = document.getElementById("cartItems");
+const botaoComprar = document.getElementById("buyButton");
+const secaoJogos = document.querySelector(".games");
+
+botaoAbrirCarrinho.addEventListener("click", () => {
+  barraCarrinho.classList.add("open");
+});
+
+botaoFecharCarrinho.addEventListener("click", () => {
+  barraCarrinho.classList.remove("open");
+});
+
+function atualizarCarrinho() {
+  listaCarrinho.innerHTML = "";
+  const jogos = carrinho.paraArray();
+  jogos.forEach(jogo => {
     const li = document.createElement("li");
-    li.setAttribute("data-name", gameName);
+    li.setAttribute("data-nome", jogo.nome);
     li.innerHTML = `
-        <strong>${gameName}</strong><br>
-        <img src="${imageSrc}" alt="${gameName}">
-        <br>
-        <button onclick="removeFromCart('${gameName}')">🗑 Remover</button>
+      <strong>${jogo.nome}</strong><br>
+      <img src="${jogo.imagem}" alt="${jogo.nome}" width="100"><br>
+      <button onclick="removerDoCarrinho('${jogo.nome}')">🗑 Remover</button>
     `;
-    cartItems.prepend(li);
+    listaCarrinho.prepend(li);
+  });
 }
 
-function removeFromCart(gameName) {
-    carrinho = carrinho.filter(item => item.name !== gameName);
-    const itemElement = cartItems.querySelector(`li[data-name="${gameName}"]`);
-    if (itemElement) {
-        cartItems.removeChild(itemElement);
-    }
+function adicionarAoCarrinho(nome, imagem) {
+  if (carrinho.contem(nome)) {
+    alert("Este jogo já está no carrinho!");
+    return;
+  }
+
+  carrinho.adicionar({ nome, imagem });
+  atualizarCarrinho();
 }
 
-buyButton.addEventListener("click", () => {
-    if (carrinho.length === 0) {
-        alert("Seu carrinho está vazio!");
-        return;
-    }
+function removerDoCarrinho(nome) {
+  carrinho.removerPorNome(nome);
+  atualizarCarrinho();
+}
 
-    alert("Compra finalizada!");
-    carrinho = [];
-    cartItems.innerHTML = "";
+botaoComprar.addEventListener("click", () => {
+  if (carrinho.tamanho() === 0) {
+    alert("Seu carrinho está vazio!");
+    return;
+  }
+
+  alert("Compra finalizada com sucesso!");
+  carrinho.limpar();
+  atualizarCarrinho();
 });
 
+document.getElementById("formularioNovoJogo").addEventListener("submit", function (e) {
+  e.preventDefault();
 
+  const nome = document.getElementById("nomeJogo").value.trim();
+  const imagem = document.getElementById("imagemJogo").value.trim() || "https://via.placeholder.com/150";
 
+  if (!nome) {
+    alert("Digite o nome do jogo!");
+    return;
+  }
 
-document.getElementById("enviarJogoLista").addEventListener("Click", addNewGame )
-function addNewGame (e){
-    e.preventDefault();
-    const random = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWQO_j4l2Nj9OpnQ4sbrLCkIF05Yfw8nOinA&s";
-    const nomeDoJogo = document.getElementById("nomeJogo").value;
-    const item = {
-        name : nomeDoJogo,
-        image : random
-    }
-    carrinho.push(item);
-}
+  const novoCard = document.createElement("div");
+  novoCard.classList.add("game-card");
+  novoCard.innerHTML = `
+    <h3>${nome}</h3>
+    <div class="image-placeholder"><img src="${imagem}" alt="${nome}"></div>
+    <button onclick="adicionarAoCarrinho('${nome}', '${imagem}')">Adicionar</button>
+  `;
+
+  secaoJogos.appendChild(novoCard);
+
+  document.getElementById("nomeJogo").value = "";
+  document.getElementById("imagemJogo").value = "";
+});
