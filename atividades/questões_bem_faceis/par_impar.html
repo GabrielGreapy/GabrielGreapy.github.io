@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verificador de Par ou Ímpar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-sm text-center">
+    <h1 id="Aviso" class="text-2xl font-bold text-gray-800 mb-4">Insira um número</h1>
+
+    <input type="number" id="poui" 
+           class="w-full px-4 py-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+           placeholder="Digite um número" />
+
+    <button id="submit" 
+            class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">
+      Verificar
+    </button>
+  </div>
+
+  <script>
+    document.getElementById("submit").addEventListener("click", verificar);
+
+    function verificar() {
+      const num = Number(document.getElementById("poui").value);
+      const aviso = document.getElementById("Aviso");
+
+      if (isNaN(num)) {
+        aviso.textContent = "Por favor, insira um número válido.";
+        aviso.classList.remove("text-green-600", "text-red-600");
+        aviso.classList.add("text-yellow-600");
+      } else if (num % 2 === 0) {
+        aviso.textContent = "O número é par.";
+        aviso.classList.remove("text-yellow-600", "text-red-600");
+        aviso.classList.add("text-green-600");
+      } else {
+        aviso.textContent = "O número é ímpar.";
+        aviso.classList.remove("text-yellow-600", "text-green-600");
+        aviso.classList.add("text-red-600");
+      }
+    }
+  </script>
+</body>
+</html>
