@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QO9</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">Operadores Lógicos</h1>
+    
+    <div class="flex flex-col gap-4 mb-6">
+      <select id="valor1" class="p-2 border rounded-md">
+        <option value="">Escolha Valor 1</option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+
+      <select id="valor2" class="p-2 border rounded-md">
+        <option value="">Escolha Valor 2</option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+
+      <button onclick="logica()" class="bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition">
+        Verificar
+      </button>
+    </div>
+
+    <div id="resposta" class="text-gray-800 space-y-2 text-center font-medium"></div>
+  </div>
+
+  <script>
+    function logica(){
+      const valor1 = document.getElementById("valor1").value === "true";
+      const valor2 = document.getElementById("valor2").value === "true";
+
+      const resultadoAnd = valor1 && valor2;
+      const resultadoOr = valor1 || valor2;
+      const resultadoNot1 = !valor1;
+      const resultadoNot2 = !valor2;
+
+      document.getElementById("resposta").innerHTML = `
+        <div>AND: ${resultadoAnd}</div>
+        <div>OR: ${resultadoOr}</div>
+        <div>NOT Valor 1: ${resultadoNot1}</div>
+        <div>NOT Valor 2: ${resultadoNot2}</div>
+      `;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QO10 - Comparador de Strings</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md text-center space-y-4">
+    <h1 class="text-2xl font-bold text-gray-800">Comparador de Palavras</h1>
+
+    <input 
+      type="text" 
+      id="texto1" 
+      placeholder="Digite a primeira palavra" 
+      class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+
+    <input 
+      type="text" 
+      id="texto2" 
+      placeholder="Digite a segunda palavra" 
+      class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+
+    <button 
+      onclick="comparar()" 
+      class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+    >
+      Comparar
+    </button>
+
+    <div id="resposta" class="min-h-[40px] text-lg font-medium text-gray-700"></div>
+  </div>
+
+  <script>
+    function comparar() {
+      const texto1 = document.getElementById("texto1").value.trim();
+      const texto2 = document.getElementById("texto2").value.trim();
+      const resposta = document.getElementById("resposta");
+
+      if (!texto1 || !texto2) {
+        resposta.innerHTML = `<p class="text-yellow-600">Preencha os dois campos.</p>`;
+        return;
+      }
+
+      if (texto1 === texto2) {
+        resposta.innerHTML = `<h2 class="text-green-600">As strings são iguais.</h2>`;
+      } else {
+        resposta.innerHTML = `<h2 class="text-red-600">As strings são diferentes.</h2>`;
+      }
+    }
+  </script>
+
+</body>
+</html>

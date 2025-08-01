@@ -2,126 +2,123 @@
 <html lang="pt-BR" data-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Martins</title>
-    <link rel="stylesheet" href="/static/style/style.css">
-    <link rel="stylesheet" href="/atividades/static/css/style.css">
-    <script src="/static/js/script.js"></script>
-    <link rel="shortcut icon" href="/static/imgs/logoG.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriel Martins</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style/style.css" />
+  <link rel="stylesheet" href="/atividades/static/css/style.css" />
+  <script src="/static/js/script.js"></script>
+  <link rel="shortcut icon" href="/static/imgs/logoG.png" type="image/png" />
 </head>
 
 <body>
-    <nav class="border-down">
-
-        <ul>
-            <li onclick="sideBarOn()">
-                <div class="icon-menu"></div>
-            </li>
-            <li>
-                <span>GABRIEL MARTINS</span>
-            </li>
-            <li class="mudanca" onclick="alternarTema()">
-                <div class="icon-sol">
-                </div>
-            </li>
-        </ul>
-    </nav>
-    <div class="side-bar" id="sidebar">
-        <ul>
-            <li>
-                <p onclick="sideBarOff()" id="close-btn">X</p>
-            </li>
-            <li>
-                <p>Home</p>
-            </li>
-            <li>
-                <p>Projetos</p>
-            </li>
-            <li>
-                <p>Sobre mim</p>
-            </li>
-            <li>
-                <p>Contatos</p>
-            </li>
-            <li>
-                <a href="/atividades/atividade.html">Atividades</a>
-            </li>
-        </ul>
-    </div>
+  <nav class="border-down">
     <ul>
-        <li>
-            <a href="/atividades/questões_bem_faceis/par_impar.html">Questão simples</a>
-        </li>
-        <li>
-            <a href=""></a>
-        </li>
-        <li>
-            <a href="/atividades/vet/atv1/atv1.html">Vetores: Atividade 1</a>
-        </li>
-        <li>
-            <a href="/atividades/vet/atv2/atv2.html">Vetores: Atividade 2, 3</a>
-        </li>
-        <li>
-            <a href="/atividades/vet/atv3/atv3.html">Vetores: Atividade 4</a>
-        </li>
-        <li>
-            <a href="/atividades/vet/atv5/atv5.html">Vetores: Atividade 5</a>
-        </li>
-        <li>=
-            <a href="/atividades/listas_pilhas/atv1Lista/pilha.html">Pilhas</a>
-            <a href="/atividades/listas_pilhas/atv1Lista/atv.html">Filas</a>
-        </li>
-        <li>
-            <a href="/atividades/listas_pilhas/carrinho/carrinho.html">Carrinho</a>
-        </li>
+      <li onclick="sideBarOn()">
+        <div class="icon-menu"></div>
+      </li>
+      <li>
+        <span>GABRIEL MARTINS</span>
+      </li>
+      <li class="mudanca" onclick="alternarTema()">
+        <div class="icon-sol"></div>
+      </li>
     </ul>
+  </nav>
 
+  <div class="side-bar" id="sidebar">
+    <ul>
+      <li>
+        <p onclick="sideBarOff()" id="close-btn">X</p>
+      </li>
+      <li><p>Home</p></li>
+      <li><p>Projetos</p></li>
+      <li><p>Sobre mim</p></li>
+      <li><p>Contatos</p></li>
+      <li><a href="/atividades/atividade.html">Atividades</a></li>
+    </ul>
+  </div>
 
+  <!-- CONTEÚDO CENTRAL ESTILIZADO COM TAILWIND -->
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <ul class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 text-blue-700">
+      <li>
+        <a class="block bg-blue-100 hover:bg-blue-200 p-4 rounded shadow" href="/atividades/questões_bem_faceis/Maior.html">Maior ou menor?</a>
+      </li>
+      <li>
+        <a class="block bg-blue-100 hover:bg-blue-200 p-4 rounded shadow" href="/atividades/questões_bem_faceis/QO9.html">Verificador bool</a>
+      </li>
+      <li>
+        <a class="block bg-blue-100 hover:bg-blue-200 p-4 rounded shadow" href="/atividades/questões_bem_faceis/QO4.html">Calculadora</a>
+      </li>
+      <li>
+        <a class="block bg-blue-100 hover:bg-blue-200 p-4 rounded shadow" href="/atividades/questões_bem_faceis/QO10.html">Verificador de strings</a>
+      </li>
+      <li>
+        <a class="block bg-blue-100 hover:bg-blue-200 p-4 rounded shadow" href="/atividades/questões_bem_faceis/QO5.html">Circuferência</a>
+      </li>
+      <li>
+        <a class="block bg-blue-100 hover:bg-blue-200 p-4 rounded shadow" href="/atividades/questões_bem_faceis/QO7.html">Salário</a>
+      </li>
+      <li>
+        <a class="block bg-blue-100 hover:bg-blue-200 p-4 rounded shadow" href="/atividades/questões_bem_faceis/par_impar.html">Par ou impar</a>
+      </li>
+      <li>
+        <a class="block bg-blue-100 hover:bg-blue-200 p-4 rounded shadow" href="/atividades/vet/atv1/atv1.html">Vetores: Atividade 1</a>
+      </li>
+      <li>
+        <a class="block bg-blue-100 hover:bg-blue-200 p-4 rounded shadow" href="/atividades/vet/atv2/atv2.html">Vetores: Atividade 2, 3</a>
+      </li>
+      <li>
+        <a class="block bg-blue-100 hover:bg-blue-200 p-4 rounded shadow" href="/atividades/vet/atv3/atv3.html">Vetores: Atividade 4</a>
+      </li>
+      <li>
+        <a class="block bg-blue-100 hover:bg-blue-200 p-4 rounded shadow" href="/atividades/vet/atv5/atv5.html">Vetores: Atividade 5</a>
+      </li>
+      <li>
+        <a class="block bg-blue-100 hover:bg-blue-200 p-4 rounded shadow" href="/atividades/listas_pilhas/atv1Lista/pilha.html">Pilhas</a>
+        <a class="block bg-blue-100 hover:bg-blue-200 p-4 rounded shadow mt-2" href="/atividades/listas_pilhas/atv1Lista/atv.html">Filas</a>
+      </li>
+      <li>
+        <a class="block bg-blue-100 hover:bg-blue-200 p-4 rounded shadow" href="/atividades/listas_pilhas/carrinho/carrinho.html">Carrinho</a>
+      </li>
+    </ul>
+  </main>
 
-
-
-
-
-    <footer>
-        <div class="footer-div redes-sociais">
-            <div>
-                <div class="">
-                    <span>Redes sociais:</span>
-                </div class="">
-                <div>
-                    <a href="">
-                        <div class="icon-ig"></div>
-                    </a>
-                    <a href="">
-                        <div class="icon-linkedin"></div>
-                    </a>
-                </div>
-            </div>
+  <footer>
+    <div class="footer-div redes-sociais">
+      <div>
+        <div class="">
+          <span>Redes sociais:</span>
         </div>
-        <div class="footer-div redes-sociais">
-            <div>
-                <span>
-                    Email: <br>
-                    gabrielmartinsw3dev@gmail.com
-                </span>
-            </div>
+        <div>
+          <a href="">
+            <div class="icon-ig"></div>
+          </a>
+          <a href="">
+            <div class="icon-linkedin"></div>
+          </a>
         </div>
-        <div class="footer-div navegacao">
-            <div>
-                <span>Navegação:</span>
-            </div>
-            <div>
-                Projetos
-            </div>
-            <div>
-                Sobre mim
-            </div>
-            <div>
-                Contatos
-            </div>
-        </div>
-    </footer>
+      </div>
+    </div>
+    <div class="footer-div redes-sociais">
+      <div>
+        <span>
+          Email: <br />
+          gabrielmartinsw3dev@gmail.com
+        </span>
+      </div>
+    </div>
+    <div class="footer-div navegacao">
+      <div>
+        <span>Navegação:</span>
+      </div>
+      <div>Projetos</div>
+      <div>Sobre mim</div>
+      <div>Contatos</div>
+    </div>
+  </footer>
 </body>
 
 </html>

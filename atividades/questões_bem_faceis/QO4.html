@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QO4 - Calculadora</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md text-center space-y-4">
+    <h1 class="text-2xl font-bold text-gray-800">Calculadora</h1>
+
+    <input 
+      type="number" 
+      id="numero1" 
+      placeholder="Número 1" 
+      class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+    />
+
+    <input 
+      type="number" 
+      id="numero2" 
+      placeholder="Número 2" 
+      class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+    />
+
+    <input 
+      type="text" 
+      id="op" 
+      placeholder="Operador (+, -, *, /)" 
+      class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+    />
+
+    <button 
+      onclick="operacao()" 
+      class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+    >
+      Calcular
+    </button>
+
+    <div id="resposta" class="min-h-[40px] text-lg font-medium text-gray-700"></div>
+  </div>
+
+  <script>
+    function operacao() {
+      const numero1 = parseFloat(document.getElementById("numero1").value);
+      const numero2 = parseFloat(document.getElementById("numero2").value);
+      const op = document.getElementById("op").value.trim();
+      const respostaDiv = document.getElementById("resposta");
+
+      if (isNaN(numero1) || isNaN(numero2)) {
+        respostaDiv.innerHTML = `<p class="text-yellow-600">Digite números válidos.</p>`;
+        return;
+      }
+
+      let resultado;
+
+      if (op === "+") {
+        resultado = numero1 + numero2;
+      } else if (op === "-") {
+        resultado = numero1 - numero2;
+      } else if (op === "*") {
+        resultado = numero1 * numero2;
+      } else if (op === "/") {
+        if (numero1 <= 0 || numero2 <= 0) {
+          respostaDiv.innerHTML = `<p class="text-red-600">Números devem ser positivos para divisão.</p>`;
+          return;
+        }
+        resultado = numero1 / numero2;
+      } else {
+        respostaDiv.innerHTML = `<p class="text-red-600">Operador inválido. Use +, -, * ou /</p>`;
+        return;
+      }
+
+      respostaDiv.innerHTML = `<h2 class="text-green-600">Resultado: ${resultado}</h2>`;
+    }
+  </script>
+
+</body>
+</html>

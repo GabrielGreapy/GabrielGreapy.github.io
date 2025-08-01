@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comparação</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">Comparador de Números</h1>
+
+    <div class="flex flex-col gap-4">
+      <input type="number" id="n1" class="p-2 border rounded-md" placeholder="Digite o primeiro número">
+      <input type="number" id="n2" class="p-2 border rounded-md" placeholder="Digite o segundo número">
+      <input type="button" value="Verificar" onclick="verificar()" class="bg-blue-600 text-white rounded-md py-2 hover:bg-blue-700 transition">
+    </div>
+
+    <div id="resposta" class="mt-6 text-center text-lg font-medium text-gray-800"></div>
+  </div>
+
+  <script>
+    function verificar() {
+      const n1 = Number(document.getElementById("n1").value);
+      const n2 = Number(document.getElementById("n2").value);
+      const respostaDiv = document.getElementById("resposta");
+
+      if (n1 < n2) {
+        respostaDiv.innerHTML = "O primeiro número é menor.";
+      } else if (n1 > n2) {
+        respostaDiv.innerHTML = "O primeiro número é maior.";
+      } else {
+        respostaDiv.innerHTML = "Os dois números são iguais.";
+      }
+    }
+  </script>
+
+</body>
+</html>
